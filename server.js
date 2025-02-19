@@ -12,7 +12,7 @@ app.use(express.json())
 app.use('/api/workouts', workoutRoutes)
 
 //connect db
-mongoose.connect('mongodb://localhost:27017/')
+mongoose.connect('mongodb+srv://deepakshinde199914:CjGNuBqyoJOPAXS5@cluster0.sbruk.mongodb.net/WorkoutBuddy?retryWrites=true&w=majority&appName=Cluster0')
     .then(() => {
         //listening port
         app.listen(4000, () => {
