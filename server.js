@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
+require('dotenv').config()
 
 //Express app
 const app = express()
@@ -12,7 +13,7 @@ app.use(express.json())
 app.use('/api/workouts', workoutRoutes)
 
 //connect db
-mongoose.connect('mongodb+srv://deepakshinde199914:CjGNuBqyoJOPAXS5@cluster0.sbruk.mongodb.net/WorkoutBuddy?retryWrites=true&w=majority&appName=Cluster0')
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         //listening port
         app.listen(4000, () => {
